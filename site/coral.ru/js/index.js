@@ -1,4 +1,4 @@
-var queryParam;
+var AutoPlayer, queryParam;
 
 window.ASAP || (window.ASAP = (function() {
   var callall, fns;
@@ -120,6 +120,61 @@ Number.prototype.zeroPad = function(len, c) {
 
 window.DEBUG = 'APP NAME';
 
+AutoPlayer = (function() {
+  function AutoPlayer($indicator, timeout, finished) {
+    this.$el = $indicator;
+    this.timeout = timeout;
+    this.finished = finished;
+    this.start();
+  }
+
+  AutoPlayer.prototype.start = function() {
+    this.started = new Date().getTime();
+    return this.tick();
+  };
+
+  AutoPlayer.prototype.stop = function() {
+    cancelAnimationFrame(this.raf);
+    return this.reset();
+  };
+
+  AutoPlayer.prototype.progress = function(fraction) {
+    if (fraction > 1) {
+      fraction = 1;
+    }
+    if (fraction < 0) {
+      fraction = 0;
+    }
+    return this.$el.find('.filler').css('width', (100 - Math.round(fraction * 100)) + "%");
+  };
+
+  AutoPlayer.prototype.reset = function() {
+    return setTimeout((function(_this) {
+      return function() {
+        return _this.$el.find('.filler').css('width', '');
+      };
+    })(this), 500);
+  };
+
+  AutoPlayer.prototype.tick = function() {
+    var fraction;
+    fraction = (new Date().getTime() - this.started) / this.timeout;
+    this.progress(fraction);
+    if (fraction < 1) {
+      return this.raf = requestAnimationFrame((function(_this) {
+        return function() {
+          return _this.tick();
+        };
+      })(this));
+    } else {
+      return this.finished();
+    }
+  };
+
+  return AutoPlayer;
+
+})();
+
 ASAP(function() {
   var $flickityReady;
   $flickityReady = $.Deferred();
@@ -131,18 +186,51 @@ ASAP(function() {
     $flickityReady.resolve();
   }
   return $.when($flickityReady).done(function() {
-    var $dots, $slider;
+    var $dots, $slider, autoplayer, no_interaction_timer;
+    autoplayer = null;
+    no_interaction_timer = null;
     $dots = $('.progress-dash').on('click', function(e) {
+      if (autoplayer != null) {
+        autoplayer.stop();
+      }
+      $slider.removeAttr('data-autoplay');
       return $slider.flickity('select', $(this).index());
     });
-    return $slider = $('#hotels-of-the-week .hotels-slider').on('select.flickity', function(e, idx) {
-      return $dots.eq(idx).addClass('is-selected').siblings('.is-selected').removeClass('is-selected');
-    }).flickity({
+    return $slider = $('#hotels-of-the-week .hotels-slider').flickity({
       cellSelector: '.hotel-slide',
       cellAlign: 'center',
       wrapAround: true,
       prevNextButtons: false,
-      pageDots: false
+      pageDots: false,
+      on: {
+        dragStart: function() {
+          if (autoplayer != null) {
+            autoplayer.stop();
+          }
+          return this.$element.removeAttr('data-autoplay');
+        },
+        staticClick: function() {
+          if (autoplayer != null) {
+            autoplayer.stop();
+          }
+          return this.$element.removeAttr('data-autoplay');
+        },
+        select: function(idx) {
+          var $dot, autoplay, me;
+          autoplay = this.$element.attr('data-autoplay');
+          $dot = $dots.eq(idx);
+          if (autoplay) {
+            me = this;
+            if (autoplayer != null) {
+              autoplayer.stop();
+            }
+            autoplayer = new AutoPlayer($dot, Number(autoplay), function() {
+              return me.next();
+            });
+          }
+          return $dot.addClass('is-selected').siblings('.is-selected').removeClass('is-selected');
+        }
+      }
     });
   });
 });
