@@ -196,7 +196,7 @@ ASAP(function() {
       $slider.removeAttr('data-autoplay');
       return $slider.flickity('select', $(this).index());
     });
-    return $slider = $('#hotels-of-the-week .hotels-slider').flickity({
+    $slider = $('#hotels-of-the-week .hotels-slider').flickity({
       cellSelector: '.hotel-slide',
       cellAlign: 'center',
       wrapAround: true,
@@ -232,5 +232,8 @@ ASAP(function() {
         }
       }
     });
+    return setTimeout(function() {
+      return $slider.flickity('resize');
+    }, 0);
   });
 });

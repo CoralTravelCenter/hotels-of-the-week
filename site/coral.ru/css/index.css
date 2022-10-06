@@ -180,7 +180,7 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 1em 2em;
+  padding: 1em 2em 2em;
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card > * {
   max-width: 100%;
@@ -195,11 +195,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 80%;
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .location-stars .location {
   display: flex;
   align-items: center;
   font-weight: normal;
+  text-align: left;
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .location-stars .location:before {
   content: '';
@@ -243,6 +245,7 @@
   align-items: center;
   line-height: 1.2;
   height: 2.4em;
+  margin: 0;
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .hotel-subline {
   display: flex;

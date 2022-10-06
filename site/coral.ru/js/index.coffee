@@ -117,5 +117,7 @@ ASAP ->
                         autoplayer?.stop()
                         autoplayer = new AutoPlayer $dot, Number(autoplay), -> me.next()
                     $dot.addClass('is-selected').siblings('.is-selected').removeClass('is-selected')
-
+        setTimeout ->
+            $slider.flickity 'resize'
+        , 0
 
