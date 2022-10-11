@@ -232,6 +232,9 @@ ASAP(function() {
         }
       }
     });
+    $slider.closest('.widgetcontainer').css({
+      overflow: 'hidden'
+    });
     return setTimeout(function() {
       return $slider.flickity('resize');
     }, 0);
