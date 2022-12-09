@@ -63,6 +63,15 @@
 		.abs100x100;
 	}
 }
+.unproportional() {
+	position: static;
+	&:before {
+		display: none;
+	}
+	& > * {
+		.reset;
+	}
+}
 
 .transit(@what: all, @duration: 0.5s) {
 	-webkit-transition+: @what @duration;

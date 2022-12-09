@@ -116,3 +116,301 @@
   color: white;
   background-color: #D7232A;
 }
+#hotels-of-the-week {
+  width: 100%;
+}
+#hotels-of-the-week,
+#hotels-of-the-week * {
+  box-sizing: border-box;
+}
+#hotels-of-the-week .hotels-slider {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#hotels-of-the-week .hotels-slider .flickity-viewport {
+  width: 100%;
+  margin-bottom: 1em;
+}
+#hotels-of-the-week .hotels-slider .flickity-prev-next-button {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: 0;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+#hotels-of-the-week .hotels-slider .flickity-prev-next-button.next {
+  order: 1;
+}
+#hotels-of-the-week .hotels-slider .flickity-page-dots {
+  list-style: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+#hotels-of-the-week .hotels-slider .flickity-page-dots .dot {
+  outline: none;
+  background-color: #9b9b9b;
+  border: 6px solid #fafafa;
+  border-radius: 50%;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  margin: 0 4px;
+  transition: all 300ms;
+  cursor: pointer;
+}
+#hotels-of-the-week .hotels-slider .flickity-page-dots .dot.is-selected {
+  pointer-events: none;
+  width: 19px;
+  height: 19px;
+  background-color: #fff;
+  border: 3px solid #d8232a;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide {
+  position: relative;
+  width: 100%;
+  font-size: 20px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide:before {
+  content: '';
+  display: block;
+  padding-top: 38.39416058%;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 1440px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide {
+    font-size: 1.33vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    font-size: 3.2vw;
+  }
+  #hotels-of-the-week .hotels-slider .hotel-slide:before {
+    display: none;
+  }
+  #hotels-of-the-week .hotels-slider .hotel-slide > * {
+    position: static;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    background: none;
+  }
+}
+#hotels-of-the-week .hotels-slider .hotel-slide.is-selected {
+  opacity: 1;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide.is-selected .visual {
+  opacity: 1;
+  transform: none;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .visual {
+  background: center no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  transform: scale(0.9);
+  -webkit-transition: opacity 2s, transform 1s;
+  -moz-transition: opacity 2s, transform 1s;
+  -ms-transition: opacity 2s, transform 1s;
+  -o-transition: opacity 2s, transform 1s;
+  transition: opacity 2s, transform 1s;
+}
+@media screen and (max-width: 768px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide .visual {
+    position: relative;
+    width: 100%;
+  }
+  #hotels-of-the-week .hotels-slider .hotel-slide .visual:before {
+    content: '';
+    display: block;
+    padding-top: 53.33333333%;
+  }
+  #hotels-of-the-week .hotels-slider .hotel-slide .visual > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card {
+  width: 38%;
+  display: flex;
+  padding: 1.5em;
+}
+@media screen and (max-width: 768px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide .info-card {
+    width: 100%;
+    padding: 0;
+  }
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .pad {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: white;
+  padding: 1.5em;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .pad > * {
+  max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide .info-card .pad > *:nth-child(n+2) {
+    margin-top: 7.5%;
+  }
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .logo-stars {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  font-size: 80%;
+}
+@media screen and (max-width: 768px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide .info-card .logo-stars {
+    height: 6em;
+  }
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .logo-stars .hotel-logo {
+  flex: 1;
+  background: top left no-repeat;
+  background-size: contain;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .logo-stars .stars {
+  display: flex;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .logo-stars .stars .star {
+  width: 16px;
+  height: 16px;
+  margin: 0 2px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAuODE4MSA0LjY5NzM2TDE1LjE3MTggNS4zNTkxOUMxNS41MzE3IDUuNDEyNDYgMTUuODM1MyA1LjY3NTU3IDE1Ljk1MTEgNi4wMzM5M0MxNi4wNjY5IDYuMzk3MTMgMTUuOTczIDYuNzg5MzggMTUuNzExNyA3LjA1ODk1TDEyLjU1NTIgMTAuMjUxOUwxMy4zMDAxIDE0LjgzM0MxMy4zNjExIDE1LjIwNzUgMTMuMjEyNSAxNS41ODg1IDEyLjkwODkgMTUuODExMkMxMi42MDg0IDE2LjAzMjQgMTIuMjEyNSAxNi4wNjE0IDExLjg4ODUgMTUuODgzOUw3Ljk5ODA5IDEzLjc0MzRMNC4xMTA3OSAxNS44ODM5QzMuNzgzNzIgMTYuMDYxNCAzLjM4NjIyIDE2LjAzNCAzLjA4NzMyIDE1LjgxMTJDMi43ODY4NSAxNS41OTAxIDIuNjM2NjIgMTUuMjA3NSAyLjY5OTIxIDE0LjgzM0wzLjQ0NDEyIDEwLjI1MTlMMC4yODc2NDUgNy4wNjA1N0MwLjAyNjMwMDMgNi43OTI2MSAtMC4wNjYwMzEgNi4zOTg3NCAwLjA0ODIwOTUgNi4wMzU1NEMwLjE2MjQ1IDUuNjc1NTcgMC40NjQ0ODMgNS40MTQwNyAwLjgyNzU0OCA1LjM2MDhMNS4xNzgwOCA0LjY5ODk3TDcuMTI3OTkgMC41NjMzNkM3LjI4OTE4IDAuMjE5NTMzIDcuNjI3MiAwIDcuOTk4MDkgMEM4LjM2ODk4IDAgOC43MTAxNCAwLjIxNzkxOSA4Ljg3MTMzIDAuNTYzMzZMMTAuODE5NyA0LjY5ODk3TDEwLjgxODEgNC42OTczNloiIGZpbGw9IiNENzI0MkEiLz48L3N2Zz4K") center no-repeat;
+  background-size: contain;
+}
+@media screen and (max-width: 768px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide .info-card .logo-stars .stars .star {
+    width: 2em;
+    height: 2em;
+  }
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .location {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 0.7em;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .location:before {
+  content: '';
+  width: 1em;
+  height: 1.28571429em;
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxNCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYuOCAxLjY1MDcyQzUuMzI3MSAxLjY1MDcyIDQuMTA4MzEgMi4xMjQzMSAzLjA5NzgzIDMuMDY4NjlDMi4wODY1OSA0LjAxMTc0IDEuNiA1LjEyMzk3IDEuNiA2LjQ0ODY2QzEuNiA3LjA4MjQzIDEuNzc3OTEgNy44NzUzNSAyLjE4MTc5IDguODQwMDJMMi4xODIyOCA4Ljg0MTJDMi41OTQ5OCA5LjgzMTM3IDMuMDUwMjcgMTAuNzA4NSAzLjU0NjAzIDExLjQ3OEM0LjA1MzAxIDEyLjI2NDkgNC42NDY2OCAxMy4wNzkzIDUuMzI4OTMgMTMuOTI1OEM2LjAyODggMTQuNzkxOSA2LjQ5NDY2IDE1LjM0NjggNi43Mzk5NCAxNS42MDg2TDYuNzQyMTEgMTUuNjEwOUM2Ljc3MDY2IDE1LjY0MTYgNi43OTgyMSAxNS42NzEzIDYuODI0ODcgMTUuN0w2Ljg2MzcxIDE1LjY2MTVDNy4yNDI3IDE1LjIzNzEgNy43MTE2MiAxNC42NTQ4IDguMjc2MDYgMTMuOTA4N0w4LjI3Njc2IDEzLjkwNzdDOC44NDQwOCAxMy4xNiA5LjQxODM3IDEyLjM1MTIgMTAuMDAyMiAxMS40ODQ4QzEwLjU2MjcgMTAuNjUzMSAxMS4wNDE5IDkuNzYxOTggMTEuNDM3NCA4LjgwODE0QzExLjgyNzggNy44NjY4IDEyIDcuMDgzNzQgMTIgNi40NDYzNkMxMiA1LjEyNDE2IDExLjUxNDIgNC4wMTI0NiAxMC41MDI4IDMuMDY5MjlDOS40ODkxNSAyLjEyNCA4LjI3MjM5IDEuNjUwNzIgNi44IDEuNjUwNzJaTTIuMDA1OTcgMS44OTkxNUMzLjMyNzQ0IDAuNjY0NDA1IDQuOTQyNCAwLjA1MDcyMDIgNi44IDAuMDUwNzIwMkM4LjY1ODQxIDAuMDUwNzIwMiAxMC4yNzA1IDAuNjY0OTEzIDExLjU5NCAxLjg5OTE1QzEyLjkxOTggMy4xMzU0OSAxMy42IDQuNjY2NzYgMTMuNiA2LjQ0NjM2QzEzLjYgNy4zNTk4OCAxMy4zNTY1IDguMzU3MTYgMTIuOTE1NCA5LjQyMDk4QzEyLjQ3OTUgMTAuNDcyMyAxMS45NDk4IDExLjQ1NzggMTEuMzI5MSAxMi4zNzlDMTAuNzMxOCAxMy4yNjUzIDEwLjE0MDEgMTQuMDk5IDkuNTUxNiAxNC44NzQ2QzguOTY4MTEgMTUuNjQ1OSA4LjQ2Mzg1IDE2LjI3MzUgOC4wMzk1OCAxNi43NDY5TDguMDIzNzMgMTYuNzY0Nkw2Ljc3NjU4IDE4TDYuMjE0MzEgMTcuMzk1N0M2LjE0NTIgMTcuMzIxNCA2LjA1NzY5IDE3LjIyNjcgNS45NTg4NSAxNy4xMTk4QzUuODQxNiAxNi45OTMgNS43MDg0MiAxNi44NDg5IDUuNTcxMTMgMTYuNzAxMkM1LjI3ODkgMTYuMzg5MiA0Ljc3NzA0IDE1Ljc4ODUgNC4wODM5OCAxNC45MzA4TDQuMDgzMzMgMTQuOTNDMy4zNzE0NyAxNC4wNDY4IDIuNzQzNCAxMy4xODY0IDIuMjAxIDEyLjM0NDVDMS42NDczOSAxMS40ODUyIDEuMTQ5NjMgMTAuNTIyNSAwLjcwNTU5NiA5LjQ1NzE1QzAuMjUyODkxIDguMzc1NjYgMCA3LjM2NTU3IDAgNi40NDg2NkMwIDQuNjY2OTQgMC42ODAwODEgMy4xMzU2MiAyLjAwNTk3IDEuODk5MTVaTTQuNzQzNTggNC40NTQ5NkM1LjMxMzE5IDMuOTIzNjkgNi4wMTQ4OSAzLjY1NzI2IDYuOCAzLjY1NzI2QzcuNTg1MTEgMy42NTcyNiA4LjI4NjggMy45MjM2OSA4Ljg1NjQyIDQuNDU0OTZDOS40Mjg4MiA0Ljk4ODgxIDkuNzM0MzUgNS42Njg3MSA5LjczNDM1IDYuNDQ4NjZDOS43MzQzNSA3LjIyODYgOS40Mjg4MiA3LjkwODUgOC44NTY0MiA4LjQ0MjM1QzguMjgzODQgOC45NzYyOCA3LjU4NDQ3IDkuMjQwMDUgNi44IDkuMjQwMDVDNi4wMTQ4OSA5LjI0MDA1IDUuMzEzMTkgOC45NzM2MiA0Ljc0MzU4IDguNDQyMzVDNC4xNzExOCA3LjkwODUgMy44NjU2NSA3LjIyODYgMy44NjU2NSA2LjQ0ODY2QzMuODY1NjUgNS42Njg3MSA0LjE3MTE4IDQuOTg4ODEgNC43NDM1OCA0LjQ1NDk2Wk02LjggNS4yNTcyNkM2LjQwMzg2IDUuMjU3MjYgNi4wOTY2OSA1LjM4MDg0IDUuODM0ODcgNS42MjUwM0M1LjU3NTg0IDUuODY2NjMgNS40NjU2NSA2LjEyNzM3IDUuNDY1NjUgNi40NDg2NkM1LjQ2NTY1IDYuNzY5OTUgNS41NzU4NCA3LjAzMDY4IDUuODM0ODcgNy4yNzIyOEM2LjA5NjY5IDcuNTE2NDcgNi40MDM4NiA3LjY0MDA1IDYuOCA3LjY0MDA1QzcuMTk2NzcgNy42NDAwNSA3LjUwMTI1IDcuNTE4MzQgNy43NjUxOCA3LjI3MjIzQzguMDI0MTggNy4wMzA2NSA4LjEzNDM1IDYuNzY5OTIgOC4xMzQzNSA2LjQ0ODY2QzguMTM0MzUgNi4xMjczNyA4LjAyNDE2IDUuODY2NjMgNy43NjUxMyA1LjYyNTAzQzcuNTAzMzEgNS4zODA4NCA3LjE5NjE0IDUuMjU3MjYgNi44IDUuMjU3MjZaIiBmaWxsPSIjMEUyODU1Ii8+PC9zdmc+Cg==") center no-repeat;
+  background-size: contain;
+  margin-right: 0.5em;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .hotel-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6em;
+  line-height: 1.2;
+  height: 2.4em;
+  margin: 0;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .hotel-subline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+  height: 2.4em;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .hotel-subline > * {
+  max-width: 100%;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .actions {
+  font-size: 0.8em;
+}
+@media screen and (max-width: 576px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide .info-card .actions {
+    font-size: 13px;
+  }
+}
+#hotels-of-the-week .progressive-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#hotels-of-the-week .progressive-nav .progress-dash {
+  position: relative;
+  flex: 1 1 auto;
+  max-width: 100px;
+  height: 6px;
+  margin: 20px 6px;
+  background-color: #D9D9D9;
+  cursor: pointer;
+}
+#hotels-of-the-week .progressive-nav .progress-dash.is-selected {
+  pointer-events: none;
+}
+#hotels-of-the-week .progressive-nav .progress-dash.is-selected .filler {
+  opacity: 1;
+}
+#hotels-of-the-week .progressive-nav .progress-dash .filler {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #888888;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+#hotels-of-the-week .flickity-enabled {
+  outline: none;
+}
