@@ -117,7 +117,7 @@
 					padding: 1.5em;
 					@media screen and (max-width: @mobile-breakpoint) {
 						> *:nth-child(n+2) {
-							margin-top: 7.5%;
+							margin-top: calc(~"5% - 0.1em");
 						}
 					}
 				}
@@ -134,6 +134,7 @@
 					}
 					.hotel-logo {
 						flex: 1;
+						max-width: 50%;
 						background: top left no-repeat;
 						background-size: contain;
 					}
@@ -156,6 +157,7 @@
 
 				.location {
 					display: flex;
+					margin-top: auto;
 					align-items: center;
 					text-align: left;
 					font-size: 14/20em;
@@ -168,24 +170,26 @@
 						margin-right: .5em;
 					}
 				}
-
-
 				.hotel-name {
-					.flex-center;
+					//.flex-center;
 					font-size: 32/20em;
 					line-height: 1.2;
-					height: 2.4em;
+					//height: 2.4em;
 					margin: 0;
+					margin-top: calc(~"5% - 0.1em");
+					color: black;
 				}
 
 				.hotel-subline {
-					.flex-column;
-					justify-content: center;
+					//.flex-column;
+					//justify-content: center;
 					line-height: 1.2;
-					height: 2.4em;
+					//height: 2.4em;
+					margin-top: calc(~"5% - 0.1em");
 				}
 				.actions {
 					font-size: 16/20em;
+					margin-top: calc(~"5% - 0.1em");
 					@media screen and (max-width: @narrow-breakpoint) {
 						font-size: 13px;
 					}

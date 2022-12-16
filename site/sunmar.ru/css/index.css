@@ -299,7 +299,7 @@
 }
 @media screen and (max-width: 768px) {
   #hotels-of-the-week .hotels-slider .hotel-slide .info-card .pad > *:nth-child(n+2) {
-    margin-top: 7.5%;
+    margin-top: calc(5% - 0.1em);
   }
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .logo-stars {
@@ -317,6 +317,7 @@
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .logo-stars .hotel-logo {
   flex: 1;
+  max-width: 50%;
   background: top left no-repeat;
   background-size: contain;
 }
@@ -338,6 +339,7 @@
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .location {
   display: flex;
+  margin-top: auto;
   align-items: center;
   text-align: left;
   font-size: 0.7em;
@@ -351,26 +353,19 @@
   margin-right: 0.5em;
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .hotel-name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 1.6em;
   line-height: 1.2;
-  height: 2.4em;
   margin: 0;
+  margin-top: calc(5% - 0.1em);
+  color: black;
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .hotel-subline {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   line-height: 1.2;
-  height: 2.4em;
-}
-#hotels-of-the-week .hotels-slider .hotel-slide .info-card .hotel-subline > * {
-  max-width: 100%;
+  margin-top: calc(5% - 0.1em);
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .actions {
   font-size: 0.8em;
+  margin-top: calc(5% - 0.1em);
 }
 @media screen and (max-width: 576px) {
   #hotels-of-the-week .hotels-slider .hotel-slide .info-card .actions {
