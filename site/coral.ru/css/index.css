@@ -116,6 +116,26 @@
   color: white;
   background-color: #D7232A;
 }
+@font-face {
+  font-family: 'Museo';
+  font-weight: 900;
+  src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-900-webfont.ttf');
+}
+@font-face {
+  font-family: 'Museo';
+  font-weight: bold;
+  src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-700-webfont.ttf');
+}
+@font-face {
+  font-family: 'Museo';
+  font-weight: normal;
+  src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-500-webfont.ttf');
+}
+@font-face {
+  font-family: 'Museo';
+  font-weight: 300;
+  src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-300-webfont.ttf');
+}
 #hotels-of-the-week {
   width: 100%;
 }
@@ -132,11 +152,28 @@
   background-color: white;
   border-radius: 1em;
   opacity: 0;
+  font-family: Museo, Rubik, sans-serif;
+  font-size: 16px;
   -webkit-transition: opacity 0.5s;
   -moz-transition: opacity 0.5s;
   -ms-transition: opacity 0.5s;
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
+}
+@media screen and (max-width: 1439px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide {
+    font-size: 13.33333333px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide {
+    font-size: 1.33333333vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  #hotels-of-the-week .hotels-slider .hotel-slide {
+    font-size: 3.47222222vw;
+  }
 }
 @media screen and (max-width: 768px) {
   #hotels-of-the-week .hotels-slider .hotel-slide {
@@ -188,9 +225,10 @@
 @media screen and (max-width: 768px) {
   #hotels-of-the-week .hotels-slider .hotel-slide .info-card {
     width: 100%;
+    padding: 1em 1em 2em;
   }
   #hotels-of-the-week .hotels-slider .hotel-slide .info-card > *:nth-child(n+2) {
-    margin-top: 1em!important;
+    margin-top: 7%!important;
   }
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .location-stars {
@@ -246,17 +284,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 200%;
+  font-weight: bold;
   line-height: 1.2;
-  height: 2.4em;
   margin: 0;
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .hotel-subline {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 100%;
+  font-weight: normal;
   line-height: 1.2;
-  height: 2.4em;
   padding: 0 2em;
+}
+#hotels-of-the-week .hotels-slider .hotel-slide .info-card .actions {
+  font-size: 1.25em;
 }
 #hotels-of-the-week .progressive-nav {
   width: 100%;

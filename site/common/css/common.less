@@ -122,6 +122,19 @@
 	}
 }
 
+.silly-b2c-font-size(@max-font-size: 16px; @mobile-based-font-size: 20px; @mobile-base-breakpoint: 576px; @max-breakpoint: 1440px; @mid-breakpoint: 1200px; @mob-breakpoint: 768px) {
+	font-size: @max-font-size;
+	@media screen and (max-width: (@max-breakpoint - 1px)) {
+		font-size: (@max-font-size * @mid-breakpoint / @max-breakpoint);
+	}
+	@media screen and (max-width: (@mid-breakpoint - 1px)) {
+		font-size: unit(unit(@max-font-size) / unit(@mid-breakpoint) * 100, vw);
+	}
+	@media screen and (max-width: @mob-breakpoint) {
+		font-size: unit(unit(@mobile-based-font-size) / unit(@mobile-base-breakpoint) * 100, vw);
+	}
+}
+
 .rur:not(:empty):after {
 	content: ' \20BD ';
 }

@@ -1,5 +1,29 @@
 @import "../../common/css/common";
 
+@font-face {
+	font-family: 'Museo';
+	font-weight: 900;
+	src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-900-webfont.ttf');
+}
+
+@font-face {
+	font-family: 'Museo';
+	font-weight: bold;
+	src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-700-webfont.ttf');
+}
+
+@font-face {
+	font-family: 'Museo';
+	font-weight: normal;
+	src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-500-webfont.ttf');
+}
+
+@font-face {
+	font-family: 'Museo';
+	font-weight: 300;
+	src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-300-webfont.ttf');
+}
+
 #hotels-of-the-week {
 	.bbox;
 	width: 100%;
@@ -14,13 +38,17 @@
 			background-color: white;
 			border-radius: 1em;
 			opacity: 0;
+			font-family: Museo, Rubik, sans-serif;
+			.silly-b2c-font-size();
 			.transit(opacity);
 			@media screen and (max-width: @mobile-breakpoint) {
 				flex-direction: column !important;
 			}
+
 			&.is-selected {
 				opacity: 1;
 			}
+
 			&.odd {
 				flex-direction: row-reverse;
 			}
@@ -49,8 +77,9 @@
 				padding: 1em 2em 2em;
 				@media screen and (max-width: @mobile-breakpoint) {
 					width: 100%;
-					>*:nth-child(n+2) {
-						margin-top: 1em!important;
+					padding: 1em 1em 2em;
+					> *:nth-child(n+2) {
+						margin-top: 7%!important;
 					}
 				}
 
@@ -60,11 +89,13 @@
 					justify-content: space-between;
 					align-items: center;
 					font-size: 80%;
+
 					.location {
 						display: flex;
 						align-items: center;
 						font-weight: normal;
 						text-align: left;
+
 						&:before {
 							content: '';
 							width: 1.5em;
@@ -97,16 +128,23 @@
 
 				.hotel-name {
 					.flex-center;
+					font-size: 200%;
+					font-weight: bold;
 					line-height: 1.2;
-					height: 2.4em;
+					//height: 2.4em;
 					margin: 0;
 				}
 
 				.hotel-subline {
 					.flex-center;
+					font-size: 100%;
+					font-weight: normal;
 					line-height: 1.2;
-					height: 2.4em;
+					//height: 2.4em;
 					padding: 0 2em;
+				}
+				.actions {
+					font-size: 20/16em;
 				}
 			}
 		}
