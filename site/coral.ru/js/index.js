@@ -145,7 +145,7 @@ AutoPlayer = (function() {
     if (fraction < 0) {
       fraction = 0;
     }
-    return this.$el.find('.filler').css('width', (100 - Math.round(fraction * 100)) + "%");
+    return this.$el.find('.filler').css('width', (Math.round(fraction * 100)) + "%");
   };
 
   AutoPlayer.prototype.reset = function() {

@@ -69,7 +69,8 @@ class AutoPlayer
     progress: (fraction) ->
         fraction = 1 if fraction > 1
         fraction = 0 if fraction < 0
-        @$el.find('.filler').css 'width', "#{ 100 - Math.round(fraction * 100) }%"
+#        @$el.find('.filler').css 'width', "#{ 100 - Math.round(fraction * 100) }%"
+        @$el.find('.filler').css 'width', "#{ Math.round(fraction * 100) }%"
     reset: () ->
         setTimeout =>
             @$el.find('.filler').css 'width', ''
