@@ -236,7 +236,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 80%;
+  font-size: 0.875em;
 }
 #hotels-of-the-week .hotels-slider .hotel-slide .info-card .location-stars .location {
   display: flex;
